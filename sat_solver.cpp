@@ -80,7 +80,8 @@ struct Assignment {
     bool value;
     optional<Clause> antecedent;
     int dl;  // decision level
-
+    Assignment() : value(false), antecedent(nullopt), dl(0) {}
+    
     Assignment(bool val, optional<Clause> ant, int decision_level)
         : value(val), antecedent(ant), dl(decision_level) {}
 };
